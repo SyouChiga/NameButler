@@ -30,14 +30,14 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -86,11 +86,12 @@
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)DanshinTensei\Auxiliary;$(SolutionDir)DanshinTensei\Manual;$(SolutionDir)DanshinTensei\Actor;$(SolutionDir)DanshinTensei\HEADER;$(SolutionDir)DanshinTensei\Enum;$(SolutionDir)DanshinTensei\Input;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -116,13 +117,14 @@
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)DanshinTensei\Auxiliary;$(SolutionDir)DanshinTensei\Manual;$(SolutionDir)DanshinTensei\Actor;$(SolutionDir)DanshinTensei\HEADER;$(SolutionDir)DanshinTensei\Enum;$(SolutionDir)DanshinTensei\Input;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,7 +153,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Actor\BaseActor.cpp" />
+    <ClCompile Include="Actor\Pawn\BasePawn.cpp" />
+    <ClCompile Include="Actor\Pawn\BasePlayer\BasePlayer.cpp" />
+    <ClCompile Include="Actor\Pawn\BasePlayer\PlayerField\PlayerField.cpp" />
+    <ClCompile Include="Auxiliary\BaseAuxiliary\BaseAuxiliary.cpp" />
+    <ClCompile Include="Auxiliary\Vector2\Vector2.cpp" />
     <ClCompile Include="DanshinTensei.cpp" />
+    <ClCompile Include="HEADER\conioex\conionex_Input\conionexInput.cpp" />
+    <ClCompile Include="Input\GameInput.cpp" />
+    <ClCompile Include="Manual\BaseManual.cpp" />
+    <ClCompile Include="Manual\BasePlayerManual\BasePlayerManual.cpp" />
+    <ClCompile Include="Manual\BasePlayerManual\PlayerFieldManual\PlayerFieldManual.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Actor\BaseActor.h" />
+    <ClInclude Include="Actor\Pawn\BasePawn.h" />
+    <ClInclude Include="Actor\Pawn\BasePlayer\BasePlayer.h" />
+    <ClInclude Include="Actor\Pawn\BasePlayer\PlayerField\PlayerField.h" />
+    <ClInclude Include="Auxiliary\BaseAuxiliary\BaseAuxiliary.h" />
+    <ClInclude Include="Auxiliary\Vector2\Vector2.h" />
+    <ClInclude Include="Enum\EnumInput\EnumGamepad\EventGamepad.h" />
+    <ClInclude Include="Enum\EnumInput\Enumkeyboard\EventKeyboard.h" />
+    <ClInclude Include="HEADER\conioex\conionex_Input\conionexInput.h" />
+    <ClInclude Include="Input\GameInput.h" />
+    <ClInclude Include="Manual\BaseManual.h" />
+    <ClInclude Include="Manual\BasePlayerManual\BasePlayerManual.h" />
+    <ClInclude Include="Manual\BasePlayerManual\PlayerFieldManual\PlayerFieldManual.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

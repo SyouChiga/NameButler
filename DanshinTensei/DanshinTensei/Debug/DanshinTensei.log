@@ -1,0 +1,35 @@
+﻿  PlayerFieldManual.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winbase.h(7464,48): warning C5039: 'TpSetCallbackCleanupGroup': -EHc の extern C 関数に渡された、スローする可能性がある関数へのポインターまたは参照。この関数が例外をスローすると、未定義の動作が発生する可能性があります。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10229,22): warning C4668: '_WIN32_WINNT_WIN10_TH2' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10235,22): warning C4668: '_WIN32_WINNT_WIN10_RS1' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10240,22): warning C4668: '_WIN32_WINNT_WIN10_TH2' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10244,22): warning C4668: '_WIN32_WINNT_WIN10_TH2' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10251,22): warning C4668: '_WIN32_WINNT_WIN10_RS2' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10261,22): warning C4668: '_WIN32_WINNT_WIN10_RS2' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10265,22): warning C4668: '_WIN32_WINNT_WIN10_TH2' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10270,22): warning C4668: '_WIN32_WINNT_WIN10_RS3' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10277,22): warning C4668: '_WIN32_WINNT_WIN10_RS4' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10280,22): warning C4668: '_WIN32_WINNT_WIN10_RS1' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10283,22): warning C4668: '_WIN32_WINNT_WIN10_RS4' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10288,22): warning C4668: '_WIN32_WINNT_WIN10_RS1' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10291,22): warning C4668: '_WIN32_WINNT_WIN10_RS5' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10486,22): warning C4668: '_WIN32_WINNT_WIN10_RS2' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(10510,22): warning C4668: '_WIN32_WINNT_WIN10_RS5' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(13950,22): warning C4668: '_WIN32_WINNT_WIN10_RS5' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(14134,22): warning C4668: '_WIN32_WINNT_WIN10_RS5' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(14237,22): warning C4668: '_WIN32_WINNT_WIN10_RS5' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(14333,21): warning C4668: '_WIN32_WINNT_WIN10_RS5' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(14437,22): warning C4668: '_WIN32_WINNT_WIN10_RS5' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(15094,23): warning C4668: '_WIN32_WINNT_WIN10_RS2' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(15111,22): warning C4668: '_WIN32_WINNT_WIN10_RS3' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(15128,23): warning C4668: '_WIN32_WINNT_WIN10_RS3' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(15147,22): warning C4668: '_WIN32_WINNT_WIN10_RS2' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(15266,22): warning C4668: '_WIN32_WINNT_WIN10_RS3' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(15416,22): warning C4668: '_WIN32_WINNT_WIN10_RS4' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(15429,22): warning C4668: '_WIN32_WINNT_WIN10_RS4' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winioctl.h(15657,22): warning C4668: '_WIN32_WINNT_WIN10_RS1' は、'#if/#elif' を '0' に置換するプリプロセッサ マクロとして定義されていません。
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(111,5): warning C4365: '引数': 'long' から 'unsigned int' に変換しました。signed/unsigned が一致しません。
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(121,5): warning C4365: '引数': 'long' から 'unsigned int' に変換しました。signed/unsigned が一致しません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(948,37): warning C4710: 'int printf(const char *const ,...)': インライン関数ではありません。
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(948): message : 'printf' の宣言を確認してください
+  DanshinTensei.vcxproj -> D:\HAL\Git\NameButler_DanshinTensei\DanshinTensei\Debug\DanshinTensei.exe

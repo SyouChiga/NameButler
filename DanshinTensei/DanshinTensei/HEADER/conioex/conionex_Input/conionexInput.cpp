@@ -1,0 +1,134 @@
+#include "conionexInput.h"
+#include <vector>
+
+extern DWORD	__conioex_h_dwKeyMapA[8]
+#ifndef CONIOEX
+= { 0, 0, 0, 0, 0, 0, 0, 0 };
+#endif /* CONIOEX */
+;
+extern COORD	__conioex_h_crdMouseA
+#ifndef CONIOEX
+= { 0, 0 };
+#endif /* CONIOEX */
+
+void reinport(void)
+{
+#ifdef CONIOEX
+	;
+#else /* !CONIOEX */
+	{
+		int i;
+		for (i = 0; i < 8; i++)
+		{
+			__conioex_h_dwKeyMapA[i] = 0;
+		}
+	}
+#endif /* CONIOEX */
+}
+int inport(int port)
+{
+#ifdef CONIOEX
+	;
+#else /* !CONIOEX */
+	{
+		DWORD	dwEvent;
+		HANDLE	h;
+
+		/* ゲームパッド入力 */
+		if ((port & 0xfe00) == 0x0200) {
+			int		id = (port & 0x01f0) >> 4;
+			int		func = port & 0x0f;
+			JOYINFO	ji;
+
+			switch (func) {
+			case 0:	case 1:	case 2:	case 3:
+				if (joyGetPos(id, &ji) != JOYERR_NOERROR)
+					return -1;
+				switch (func) {
+				case 0:
+					return ji.wXpos;
+				case 1:
+					return ji.wYpos;
+				case 2:
+					return ji.wZpos;
+				case 3:
+					return ji.wButtons;
+				}
+				break;
+			default:
+				break;
+			}
+			return 0;
+		}
+		// キー/マウス イベント チェック
+		dwEvent = 0;
+		h = GetStdHandle(STD_INPUT_HANDLE);
+		if (GetNumberOfConsoleInputEvents(h, &dwEvent) && dwEvent) {
+			DWORD			dwRead = 0;
+			PINPUT_RECORD	pInpRec = (PINPUT_RECORD)_malloca(dwEvent * sizeof(INPUT_RECORD));
+
+			if (ReadConsoleInput(h, pInpRec, dwEvent, &dwRead) && dwRead) {
+				PINPUT_RECORD	pir = pInpRec;
+				DWORD			dw;
+				for (dw = 0; dw < dwRead; dw++, pir++) {
+					switch (pir->EventType) {
+					case KEY_EVENT: {
+						KEY_EVENT_RECORD* pker = &pir->Event.KeyEvent;
+						if (pker->wVirtualKeyCode > 0x0FF)
+							break;
+						if (pker->bKeyDown)
+							__conioex_h_dwKeyMapA[pker->wVirtualKeyCode >> 5] |= (0x01 << (pker->wVirtualKeyCode & 31));
+						else
+							__conioex_h_dwKeyMapA[pker->wVirtualKeyCode >> 5] &= ~(0x01 << (pker->wVirtualKeyCode & 31));
+						if (pker->dwControlKeyState & (LEFT_ALT_PRESSED | RIGHT_ALT_PRESSED))
+							__conioex_h_dwKeyMapA[VK_MENU >> 5] |= (0x01 << (VK_MENU & 31));
+						else
+							__conioex_h_dwKeyMapA[VK_MENU >> 5] &= ~(0x01 << (VK_MENU & 31));
+						if (pker->dwControlKeyState & (LEFT_CTRL_PRESSED | RIGHT_CTRL_PRESSED))
+							__conioex_h_dwKeyMapA[VK_CONTROL >> 5] |= (0x01 << (VK_CONTROL & 31));
+						else
+							__conioex_h_dwKeyMapA[VK_CONTROL >> 5] &= ~(0x01 << (VK_CONTROL & 31));
+						if (pker->dwControlKeyState & SHIFT_PRESSED)
+							__conioex_h_dwKeyMapA[VK_SHIFT >> 5] |= (0x01 << (VK_SHIFT & 31));
+						else
+							__conioex_h_dwKeyMapA[VK_SHIFT >> 5] &= ~(0x01 << (VK_SHIFT & 31));
+						break;
+					}
+					case MOUSE_EVENT: {
+						MOUSE_EVENT_RECORD* pmer = &pir->Event.MouseEvent;
+						__conioex_h_crdMouseA = pmer->dwMousePosition;
+						if (pmer->dwButtonState & FROM_LEFT_1ST_BUTTON_PRESSED)
+							__conioex_h_dwKeyMapA[VK_LBUTTON >> 5] |= (0x01 << (VK_LBUTTON & 31));
+						else
+							__conioex_h_dwKeyMapA[VK_LBUTTON >> 5] &= ~(0x01 << (VK_LBUTTON & 31));
+						if (pmer->dwButtonState & FROM_LEFT_2ND_BUTTON_PRESSED)
+							__conioex_h_dwKeyMapA[VK_MBUTTON >> 5] |= (0x01 << (VK_MBUTTON & 31));
+						else
+							__conioex_h_dwKeyMapA[VK_MBUTTON >> 5] &= ~(0x01 << (VK_MBUTTON & 31));
+						if (pmer->dwButtonState & RIGHTMOST_BUTTON_PRESSED)
+							__conioex_h_dwKeyMapA[VK_RBUTTON >> 5] |= (0x01 << (VK_RBUTTON & 31));
+						else
+							__conioex_h_dwKeyMapA[VK_RBUTTON >> 5] &= ~(0x01 << (VK_RBUTTON & 31));
+						break;
+					}
+					default:
+						break;
+					}
+				}
+			}
+		}
+
+		// マウス座標を返す
+		switch (port) {
+		case PM_CURX:
+			return __conioex_h_crdMouseA.X + 1;
+		case PM_CURY:
+			return __conioex_h_crdMouseA.Y + 1;
+		default:
+			break;
+		}
+		// キー状態を返す
+		return (__conioex_h_dwKeyMapA[(port & 0x0FF) >> 5] & (0x01 << (port & 31))) != 0;
+	}
+#endif /* CONIOEX */
+}
