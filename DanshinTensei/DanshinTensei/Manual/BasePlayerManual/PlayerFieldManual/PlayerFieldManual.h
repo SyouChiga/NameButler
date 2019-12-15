@@ -4,7 +4,7 @@
 // author	ç‰êãÄ
 // data 2019/12/14 ì¬
 //====================================================
-#pragma
+#pragma once
 
 #include "BasePlayerManual/BasePlayerManual.h"
 

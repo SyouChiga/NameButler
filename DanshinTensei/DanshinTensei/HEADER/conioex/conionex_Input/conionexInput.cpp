@@ -65,7 +65,7 @@ int inport(int port)
 		h = GetStdHandle(STD_INPUT_HANDLE);
 		if (GetNumberOfConsoleInputEvents(h, &dwEvent) && dwEvent) {
 			DWORD			dwRead = 0;
-			PINPUT_RECORD	pInpRec = (PINPUT_RECORD)_malloca(dwEvent * sizeof(INPUT_RECORD));
+			PINPUT_RECORD	pInpRec = (PINPUT_RECORD)_alloca(dwEvent * sizeof(INPUT_RECORD));
 
 			if (ReadConsoleInput(h, pInpRec, dwEvent, &dwRead) && dwRead) {
 				PINPUT_RECORD	pir = pInpRec;

@@ -57,5 +57,6 @@ void PlayerField::Uninit()
 		manual_->Release();
 		manual_ = nullptr;
 	}
+	this->Release();
 }
 

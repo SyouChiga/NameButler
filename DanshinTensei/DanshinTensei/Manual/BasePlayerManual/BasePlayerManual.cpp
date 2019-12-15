@@ -3,7 +3,7 @@
 //====================================================
 #include "BasePlayerManual.h"
 #include "Pawn/BasePawn.h"
-
+#include "BaseLevel.h"
 using namespace Game;
 using namespace Game::Actor;
 using namespace Game::Manual;
@@ -13,18 +13,20 @@ using namespace Game::Manual;
 //==================================
 BasePlayerManual::BasePlayerManual()
 {
-
+	
 }
 
 //==================================
 //　コンストラクタ
 // @ _pawn --> 動かせるものをセットする
 //==================================
-BasePlayerManual::BasePlayerManual(BasePawn* _pawn)
+BasePlayerManual::BasePlayerManual(Actor::BasePawn* _pawn)
 {
 	if (_pawn == nullptr) return;
 
 	pawn_ = _pawn;
+
+	
 }
 
 //==================================
@@ -32,5 +34,9 @@ BasePlayerManual::BasePlayerManual(BasePawn* _pawn)
 //==================================
 BasePlayerManual::~BasePlayerManual()
 {
-
+	if (input_ == nullptr)
+	{
+		input_->Release();
+		input_ = nullptr;
+	}
 }

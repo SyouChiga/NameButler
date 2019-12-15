@@ -91,7 +91,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)DanshinTensei\Auxiliary;$(SolutionDir)DanshinTensei\Manual;$(SolutionDir)DanshinTensei\Actor;$(SolutionDir)DanshinTensei\HEADER;$(SolutionDir)DanshinTensei\Enum;$(SolutionDir)DanshinTensei\Input;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)DanshinTensei\Auxiliary;$(SolutionDir)DanshinTensei\Manual;$(SolutionDir)DanshinTensei\Actor;$(SolutionDir)DanshinTensei\HEADER;$(SolutionDir)DanshinTensei\Enum;$(SolutionDir)DanshinTensei\Input;$(SolutionDir)DanshinTensei\Level;$(SolutionDir)DanshinTensei\Manager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -124,7 +124,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)DanshinTensei\Auxiliary;$(SolutionDir)DanshinTensei\Manual;$(SolutionDir)DanshinTensei\Actor;$(SolutionDir)DanshinTensei\HEADER;$(SolutionDir)DanshinTensei\Enum;$(SolutionDir)DanshinTensei\Input;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)DanshinTensei\Auxiliary;$(SolutionDir)DanshinTensei\Manual;$(SolutionDir)DanshinTensei\Actor;$(SolutionDir)DanshinTensei\HEADER;$(SolutionDir)DanshinTensei\Enum;$(SolutionDir)DanshinTensei\Input;$(SolutionDir)DanshinTensei\Level;$(SolutionDir)DanshinTensei\Manager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -162,6 +162,12 @@
     <ClCompile Include="DanshinTensei.cpp" />
     <ClCompile Include="HEADER\conioex\conionex_Input\conionexInput.cpp" />
     <ClCompile Include="Input\GameInput.cpp" />
+    <ClCompile Include="Level\BaseLevel.cpp" />
+    <ClCompile Include="Level\Game\GameLevel.cpp" />
+    <ClCompile Include="Level\Result\ResultLevel.cpp" />
+    <ClCompile Include="Level\Title\TitleLevel.cpp" />
+    <ClCompile Include="Manager\BaseManager.cpp" />
+    <ClCompile Include="Manager\LevelManager\LevelManager.cpp" />
     <ClCompile Include="Manual\BaseManual.cpp" />
     <ClCompile Include="Manual\BasePlayerManual\BasePlayerManual.cpp" />
     <ClCompile Include="Manual\BasePlayerManual\PlayerFieldManual\PlayerFieldManual.cpp" />
@@ -173,10 +179,14 @@
     <ClInclude Include="Actor\Pawn\BasePlayer\PlayerField\PlayerField.h" />
     <ClInclude Include="Auxiliary\BaseAuxiliary\BaseAuxiliary.h" />
     <ClInclude Include="Auxiliary\Vector2\Vector2.h" />
-    <ClInclude Include="Enum\EnumInput\EnumGamepad\EventGamepad.h" />
-    <ClInclude Include="Enum\EnumInput\Enumkeyboard\EventKeyboard.h" />
     <ClInclude Include="HEADER\conioex\conionex_Input\conionexInput.h" />
     <ClInclude Include="Input\GameInput.h" />
+    <ClInclude Include="Level\BaseLevel.h" />
+    <ClInclude Include="Level\Game\Gamelevel.h" />
+    <ClInclude Include="Level\Result\ResultLevel.h" />
+    <ClInclude Include="Level\Title\TitleLevel.h" />
+    <ClInclude Include="Manager\BaseManager.h" />
+    <ClInclude Include="Manager\LevelManager\LevelManager.h" />
     <ClInclude Include="Manual\BaseManual.h" />
     <ClInclude Include="Manual\BasePlayerManual\BasePlayerManual.h" />
     <ClInclude Include="Manual\BasePlayerManual\PlayerFieldManual\PlayerFieldManual.h" />

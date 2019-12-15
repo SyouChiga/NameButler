@@ -47,7 +47,7 @@ void GameInput::Update()
 
 	for (unsigned int nCntKey = 0; nCntKey < 256; nCntKey++)
 	{
-		if (inport(nCntKey))
+		if (inport((int)nCntKey))
 		{
 			keyInput_[nCntKey] = true;
 		}
@@ -71,7 +71,7 @@ void GameInput::Update()
 //==================================
 void GameInput::Uninit()
 {
-
+	this->Release();
 }
 
 //==================================

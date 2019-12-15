@@ -1,7 +1,6 @@
 //====================================================
 //  PlayerFieldmanual : プレイヤーがフィールドを歩く時
 //====================================================
-#include <InputEventFlags.h>
 #include <Windows.h>
 #include "GameInput.h"
 #include "PlayerFieldManual.h"

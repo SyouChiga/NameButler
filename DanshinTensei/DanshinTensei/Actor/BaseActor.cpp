@@ -29,7 +29,6 @@ BaseActor::~BaseActor()
 void BaseActor::Release()
 {
 	if (this == nullptr) return;
-	this->Uninit();
 	delete this;
 }
 

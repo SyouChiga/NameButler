@@ -4,6 +4,8 @@
 #include "GameInput.h"
 #include "BaseManual.h"
 #include "Pawn/BasePawn.h"
+#include "BaseLevel.h"
+
 
 using namespace Game;
 using namespace Game::Actor;
@@ -13,8 +15,7 @@ using namespace Game::Actor;
 //==================================
 BaseManual::BaseManual()
 {
-	input_ = new GameInput();
-	input_->Init();
+	input_ = Game::BaseLevel::GetGameInput();
 }
 //==================================
 //　コンストラクタ
@@ -33,7 +34,6 @@ BaseManual::BaseManual(BasePawn* _pawn)
 //==================================
 BaseManual::~BaseManual()
 {
-	input_->Release();
 }
 
 //==================================
@@ -43,6 +43,5 @@ BaseManual::~BaseManual()
 void BaseManual::Release()
 {
 	if (this == nullptr) return;
-
 	delete this;
 }

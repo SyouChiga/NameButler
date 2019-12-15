@@ -28,7 +28,6 @@ BaseAuxiliary::~BaseAuxiliary()
 //==================================
 void BaseAuxiliary::Release()
 {
-	if (this == nullptr) return;
 
 	delete this;
 }
